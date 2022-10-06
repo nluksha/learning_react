@@ -1,5 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
+import Star from './modules/Star';
+import Checkbox from './modules/Checkbox';
 
 function App() {
   return (
@@ -17,6 +19,8 @@ function App() {
         >
           Learn React
         </a>
+        <Star />
+        <Checkbox/>
       </header>
     </div>
   );
