@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import {Link, useLocation} from 'react-router-dom';
 
 export function Home() {
   return (
@@ -44,5 +44,48 @@ export function Contact() {
     <div>
       <h1>[Contact]</h1>
     </div>
+  )
+}
+
+export function Whoops404() {
+  const location = useLocation();
+
+  return (
+    <div>
+      <h1>Resource not found af {location.pathname}</h1>
+    </div>
+  )
+}
+
+export function Services() {
+  return (
+    <section>
+      <h2>Our Services</h2>
+      <p>
+        ...
+      </p>
+    </section>
+  )
+}
+
+export function History() {
+  return (
+    <section>
+      <h2>Our History</h2>
+      <p>
+        ...
+      </p>
+    </section>
+  )
+}
+
+export function Location() {
+  return (
+    <section>
+      <h2>Our Location</h2>
+      <p>
+        ...
+      </p>
+    </section>
   )
 }
