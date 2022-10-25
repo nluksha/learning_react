@@ -11,7 +11,13 @@ app.use(express.static("./build"));
 app.get("/*", (req, res) => {
   const appView = ReactDOMServer.renderToString(<Menu />);
 
+  console.log('appView', appView);
+
   const indexFile = path.resolve('./build/index.html');
+
+  fs.readFile(indexFile, "utf8", (err, data) => {
+    return res.send(data.replace('<div id="root"></div>', `<div id="root">${appView}</div>`))
+  })
 });
 
 app.listen(PORT, () => {
